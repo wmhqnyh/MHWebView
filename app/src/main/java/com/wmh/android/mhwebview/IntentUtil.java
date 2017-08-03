@@ -39,21 +39,21 @@ public class IntentUtil {
 
 
 
-    public void putBooleanExtra(Intent intent,boolean ...args){
+    public static void putBooleanExtra(Intent intent,boolean ...args){
         for (boolean arg : args) {
             if (null != intent)
             intent.putExtra(String.valueOf(arg),args);
         }
     }
 
-    public void putStringExtra(Intent intent,String ...args){
+    public static void putStringExtra(Intent intent,String ...args){
         for (String arg : args) {
             if (null != intent)
             intent.putExtra(arg,args);
         }
     }
 
-    public void putIntegerExtra(Intent intent,Integer ...args){
+    public static void putIntegerExtra(Intent intent,Integer ...args){
         for (Integer arg : args) {
             if (null != intent)
             intent.putExtra(String.valueOf(arg),args);
@@ -67,7 +67,7 @@ public class IntentUtil {
 //        }
 //    }
 
-    public Bundle getIntentBundleValue(AppCompatActivity context,String bundleName){
+    public static Bundle getIntentBundleValue(AppCompatActivity context,String bundleName){
         Intent intent = context.getIntent();
         Bundle bundleExtra = intent.getBundleExtra(bundleName);
         return bundleExtra;

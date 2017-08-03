@@ -8,6 +8,7 @@ import android.webkit.JsResult;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.widget.ProgressBar;
 
 /**
  * Created by Administrator on 2017/8/2 0002.
@@ -18,18 +19,38 @@ public class MHWebChromeClient extends WebChromeClient {
     private static final String TAG = MHWebChromeClient.class.getSimpleName();
 
     private Context mContext;
+    private ProgressBar mProgressBar;
+    private View customView;
 
     public MHWebChromeClient(Context mContext) {
         this.mContext = mContext;
     }
 
+    public MHWebChromeClient(Context mContext, ProgressBar mProgressBar) {
+        this.mContext = mContext;
+        this.mProgressBar = mProgressBar;
+    }
+
     @Override
     public void onProgressChanged(WebView view, int newProgress) {
+
+        if (null != mProgressBar){
+            if (newProgress == 100) {
+                mProgressBar.setVisibility(View.INVISIBLE);
+            } else {
+                if (View.INVISIBLE == mProgressBar.getVisibility()) {
+                    mProgressBar.setVisibility(View.VISIBLE);
+                }
+                mProgressBar.setProgress(newProgress);
+            }
+        }
         super.onProgressChanged(view, newProgress);
     }
 
     @Override
     public void onShowCustomView(View view, CustomViewCallback callback) {
+
+        // if a view already exists then immediately terminate the new one
         super.onShowCustomView(view, callback);
     }
 
@@ -50,6 +71,7 @@ public class MHWebChromeClient extends WebChromeClient {
 
     //The undocumented magic method override
     //Eclipse will swear at you if you try to put @Override here
+
     // For Android 3.0+
     public void openFileChooser(ValueCallback<Uri> uploadMsg) {
         Log.d(TAG, "openFileChooser1");
@@ -66,5 +88,9 @@ public class MHWebChromeClient extends WebChromeClient {
     public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType, String capture) {
         Log.d(TAG, "openFileChooser3");
 
+    }
+
+    public void setProgressBar(ProgressBar progressBar){
+        this.mProgressBar = progressBar;
     }
 }

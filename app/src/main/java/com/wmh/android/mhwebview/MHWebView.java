@@ -22,10 +22,12 @@ public class MHWebView extends WebView {
 
     public MHWebView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        initWebView();
     }
 
     public MHWebView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        initWebView();
     }
     private void initWebView() {
         WebSettings settings = this.getSettings();
@@ -34,8 +36,8 @@ public class MHWebView extends WebView {
         settings.setSupportZoom(true);
         settings.setUseWideViewPort(true);
         settings.setDefaultTextEncodingName("UTF-8");
-        this.setWebViewClient(new MHWebViewClient(mContext));
-        this.setWebChromeClient(new MHWebChromeClient(mContext));
+        settings.setMediaPlaybackRequiresUserGesture(true);
+        //this.setWebViewClient(new MHWebViewClient(mContext));
+        //this.setWebChromeClient(new MHWebChromeClient(mContext));
     }
-
 }

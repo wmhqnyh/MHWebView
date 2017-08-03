@@ -25,9 +25,15 @@ public class MHWebViewClient extends WebViewClient {
 
     private static final String TAG = MHWebViewClient.class.getSimpleName();
     private Context mContext;
+    private WebView mWebView;
 
     public MHWebViewClient(Context context) {
         this.mContext = context;
+    }
+
+    public MHWebViewClient(Context mContext, WebView mWebView) {
+        this.mContext = mContext;
+        this.mWebView = mWebView;
     }
 
     @Override
@@ -71,5 +77,10 @@ public class MHWebViewClient extends WebViewClient {
     @Override
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
+
+    }
+
+    public void setWebView(WebView webView){
+        this.mWebView = webView;
     }
 }
