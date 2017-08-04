@@ -39,6 +39,7 @@ public class MHWebViewClient extends WebViewClient {
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
 
+        //获取点击的类型
         WebView.HitTestResult hitTestResult = view.getHitTestResult();
         int type = hitTestResult.getType();
         switch (type){
