@@ -3,6 +3,7 @@ package com.wmh.android.mhwebview;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.webkit.ValueCallback;
 import android.widget.ProgressBar;
 
 /**
@@ -37,6 +38,13 @@ public class WebViewActivity extends AppCompatActivity {
         mMhwebview.setWebChromeClient(mMHWebChromeClient);
         mMhwebview.setWebViewClient(mMHWebViewClient);
         mMhwebview.loadUrl(url);
+        String strJs = null;
+        mMhwebview.evaluateJavascript(strJs, new ValueCallback<String>() {
+            @Override
+            public void onReceiveValue(String s) {
+                
+            }
+        });
     }
 
 }
