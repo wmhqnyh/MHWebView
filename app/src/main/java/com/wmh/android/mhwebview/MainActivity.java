@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
 
 
-
     /**
      * 默认WebView
      */
@@ -39,7 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_webview:
-                IntentUtil.startNewIntent(this,WebViewActivity.class);
+                IntentUtil.startNewIntent(this, WebViewActivity.class);
+                break;
+            default:
                 break;
         }
     }
