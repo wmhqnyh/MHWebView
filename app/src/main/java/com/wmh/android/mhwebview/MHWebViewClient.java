@@ -84,4 +84,7 @@ public class MHWebViewClient extends WebViewClient {
     public void setWebView(WebView webView){
         this.mWebView = webView;
     }
+
+
+
 }

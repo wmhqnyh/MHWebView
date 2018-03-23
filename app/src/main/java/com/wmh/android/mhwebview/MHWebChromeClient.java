@@ -1,6 +1,7 @@
 package com.wmh.android.mhwebview;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.util.Log;
 import android.view.View;
@@ -88,6 +89,12 @@ public class MHWebChromeClient extends WebChromeClient {
     public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType, String capture) {
         Log.d(TAG, "openFileChooser3");
 
+    }
+
+    //当前视频缩略图
+    @Override
+    public Bitmap getDefaultVideoPoster() {
+        return super.getDefaultVideoPoster();
     }
 
     public void setProgressBar(ProgressBar progressBar){
