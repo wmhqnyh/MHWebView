@@ -13,7 +13,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 3.按返回键返回退到上一层goBack
      * 4.WebView退出关闭掉音乐、视频等声音
      * 5.对应注入js代码，长按保存图片到本地。
-     * 6.点击进入图片查看器
+     * 6.点击进入图片查看器；
+     * 7.WebView在使用过程中遇到的安全问题，在Android低版本的手机当中WebView与JS之间的漏洞问题
      */
 
 
