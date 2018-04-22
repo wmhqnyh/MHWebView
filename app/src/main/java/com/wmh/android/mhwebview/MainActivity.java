@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 8.360面试闻到的关于WebView的漏洞和安全问题。
      * 9.WebView 在Android不同版本之间的问题
      * 10.Android低版本上WebView的漏洞问题
-     * 11.WebView中与原生视频的交互问题
+     * 11.WebView中与原生视频的交互问题：视频两种状态下竖屏和横屏在部分手机上面出现问题。（小米和华为等手机）
      * 12.WebView多视频与多音频之间的交互问题
      * 13.WebView中DNS劫持问题
      */
