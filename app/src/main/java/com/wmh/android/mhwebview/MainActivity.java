@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 11.WebView中与原生视频的交互问题：视频两种状态下竖屏和横屏在部分手机上面出现问题。（小米和华为等手机）
      * 12.WebView多视频与多音频之间的交互问题
      * 13.WebView中DNS劫持问题
-     * 14.WebView当中打开文档文件
+     * 14.WebView当中打开文档文件Word,Excel,PPT,PDF,电子书文本格式
      */
 
 
